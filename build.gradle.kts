@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.example"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 repositories {
     mavenCentral()
@@ -27,9 +27,25 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(12)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(12))
+    }
 }
 
 application {
-    mainClass.set("ServerKt")
+    mainClass.set("vierGewinnt_javalin.ServerKt")
+}
+
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes["Main-Class"] = "vierGewinnt_javalin.ServerKt"
+    }
+    // Optional: alle Abhängigkeiten ins JAR packen (Fat JAR)
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
 }

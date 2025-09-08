@@ -324,6 +324,10 @@ Optisch etwas ansprechend ist alles mit ein wenig CSS gemacht (siehe style.css).
 Am besten per "gradle run -q --console=plain" starten damit man die Tests auf der Konsole gut nachvollziehen kann.
 
 
+```./gradlew run -q --console=plain```
+```./gradlew jar```
+
+
 ## Quellennachweis
 
 * https://de.wikipedia.org/wiki/Vier_gewinnt
