@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Poppins;
+}
+
+body {
+    background: #343a40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    color: white
+}
+
+.head {
+    padding: 2vh;
+}
+
+.zahlen {
+    margin-bottom: 10px;
+    background-color: teal;
+    border: none
+}
+
+.game {
+    border: 5px solid rgb(58, 114, 161);
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5px;
+}
+
+.board {
+    border-collapse: collapse;
+}
+
+.board table, .board th, .board td {
+    border: 1px dotted black;
+}
+
+.board th, td {
+    border: 1px solid white;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+
+}
+
+.board td {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 3em;
+}
+
+
+.playerX {
+    width: 95%;
+    height: 95%;
+    margin: 0 auto;
+    background-color: rgb(255, 234, 0);
+    border: 1px solid black;
+    border-radius: 100px;
+
+}
+
+.playerO {
+    width: 95%;
+    height: 95%;
+    margin: 0 auto;
+    background-color: rgb(71, 71, 118);
+    border: 1px solid black;
+    border-radius: 100px;
+}
+
+.infoBox {
+    display: flex;
+    width: auto;
+    height: 68px;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    background-color: gray;
+    margin-top: 20px;
+}
+
+.nextMoveX {
+    width: 50px;
+    margin-left: 15px;
+    padding-left: 15px;
+    color: rgb(255, 234, 0);
+    background-color: rgb(255, 234, 0);
+    border-radius: 100%;
+}
+
+.nextMoveO {
+    width: 50px;
+    margin-left: 15px;
+    padding-left: 15px;
+    color: rgb(71, 71, 118);
+    background-color: rgb(71, 71, 118);
+    border-radius: 100%;
+}
+
+.toolbar {
+    width: 560px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.toolbar button {
+    background-color: #4CAF50; /* Green */
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 10px 28px;
+    margin: 15px 10px;
+    margin-top: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.toolbar .undoMove {
+    background-color: crimson;
+
+}
+
+.toolbar .makeMove {
+    background-color: darkcyan;
+
+}
+
+.infoBox button {
+    background-color: #4CAF50; /* Green */
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 0px 10px;
+    margin: 0px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.testBTN {
+    width: 60px;
+}
+
