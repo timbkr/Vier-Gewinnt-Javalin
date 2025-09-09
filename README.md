@@ -334,12 +334,11 @@ gradle uses lokal machine (eg windows) gradle installation
 
 branch: cloud-run-with-gradle --> gradle im dockercontainer + erstelle jar file im container
 docker befehle:
-    docker build -t my-kotlin-app
-    docker run -p 8080:8080 my-kotlin-app
+
+docker build -t my-kotlin-app .
+docker run -p 8080:8080 my-kotlin-app
 
 ./gradlew jar | java -jar .\build\libs\vier-gewinnt-new-1.0.jar
-
-
 
 
 ## Quellennachweis
