@@ -118,6 +118,6 @@ fun getHerokuAssignedPort(): Int {
     if (herokuPort != null) {
         return Integer.parseInt(herokuPort);
     }
-    return 7070;
+    return 8080;
 }
 */

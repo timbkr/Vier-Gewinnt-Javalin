@@ -324,9 +324,13 @@ Optisch etwas ansprechend ist alles mit ein wenig CSS gemacht (siehe style.css).
 Am besten per "gradle run -q --console=plain" starten damit man die Tests auf der Konsole gut nachvollziehen kann.
 
 
-```./gradlew run -q --console=plain```
-```./gradlew jar```
+gradle uses lokal machine (eg windows) gradle installation
+./gradlew uses projekt setup gradle version
 
+```./gradlew run -q --console=plain```
+
+```./gradlew jar```
+```./gradlew run```
 
 ## Quellennachweis
 
