@@ -1,0 +1,129 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
+
+name: Java CI with Gradle
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 12
+      uses: actions/setup-java@v4
+      with:
+        java-version: ' 11.0.28+6'
+        distribution: 'temurin'
+
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+
+    # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
+    # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
+
+
+
+   # - name: Build with Gradle Wrapper
+   #   run: ./gradlew build
+
+    - name: Build JAR
+      run: ./gradlew clean build
+  
+    - name: Upload JAR Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: vier-gewinnt-jar
+        path: build/libs/*.jar
+
+ # 5️⃣ GCP Authentifizierung
+    - name: Set up GCP credentials
+      uses: google-github-actions/setup-gcloud@v3
+      with:
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+    - name: Configure Docker for GCR
+      run: gcloud auth configure-docker
+
+  # 6️⃣ Docker Image bauen
+    - name: Build Docker image
+      run: docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/vier-gewinnt:latest .
+
+
+    - name: Authenticate Docker for GCR
+      run: gcloud auth configure-docker
+  
+
+
+  # 7️⃣ Docker Image pushen
+    - name: Push Docker image
+      run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/vier-gewinnt:latest
+
+  # 8️⃣ Optional: direkt Cloud Run deployen
+    - name: Deploy to Cloud Run
+      run: |
+          gcloud run deploy vier-gewinnt \
+            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/vier-gewinnt:latest \
+            --platform managed \
+            --region europe-west1 \
+            --allow-unauthenticated
+
+
+    - name: Build JAR
+      run: ./gradlew clean build
+  
+    - name: Upload JAR Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: vier-gewinnt-jar
+        path: build/libs/*.jar
+
+
+
+    # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+    # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
+    #
+    # - name: Setup Gradle
+    #   uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
+    #   with:
+    #     gradle-version: '8.9'
+    #
+    # - name: Build with Gradle 8.9
+    #   run: gradle build
+
+
+  #dependency-submission:
+
+
+    #runs-on: ubuntu-latest
+    #permissions:
+      #contents: write
+
+    #steps:
+    #- uses: actions/checkout@v4
+    #- name: Set up JDK 12
+    #  uses: actions/setup-java@v4
+    #  with:
+    #    java-version: '11.0.28+6'
+     #   distribution: 'temurin'
+
+
+    # Generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
+    # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
+   # - name: Generate and submit dependency graph
+     # uses: gradle/actions/dependency-submission@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
