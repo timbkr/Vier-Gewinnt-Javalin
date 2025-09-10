@@ -1,6 +1,11 @@
 # Vier gewinnt 
 
-Deployed on Heroku via Pipeline: https://vier-gewinnt-javalin.herokuapp.com/
+Kotlin + Javalin Webserver + HTML/CSS/JS GUI + Alpha Beta / Monte Carlo Hybrid KI Gegner
+
+
+Deployed on Google Cloud Run via CD (Push auf GitHub Branch): https://vier-gewinnt-javalin-734133816982.europe-west1.run.app/ 
+
+Dockerfile + cloudbuild.yaml für Cloud Run Deployment im Projektordner
 
 Autor: Tim Becker
 

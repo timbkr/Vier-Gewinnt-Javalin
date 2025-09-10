@@ -104,6 +104,7 @@ fun makeMoveAndSendHTMLString(ctx: WsContext ,game: VierGewinnt, input: Int){
                 game.playerStarts = true
             }
             game.makeMove(input)
+            ctx.send(toHTMLString(game))
             if (!game.gameOver() && game.counter < 42 && !game.testMode) // im Testmodus kein automatischer Gegenzug
                 if ((game.computerStarts && game.counter and 1 == 0) || (game.counter and 1 == 1 && game.playerStarts)) {
                     /* antworte mit Gegenzug wenn der Mensch nicht für den Computer gezogen hat (per UndoMove)*/
