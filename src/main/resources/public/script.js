@@ -5,7 +5,7 @@ function sendMove(column) {
 }
 
 function sendRequestGET(path = '', query = '') {
-    console.log("send_WS: "+path + " | "+ query)
+    // console.log("send_WS: "+path + " | "+ query)
     send_WS(path,query)
 }
 
@@ -34,6 +34,6 @@ function connectWebsocket(){
 }
 
 function processMSG(msg){
-    console.log(msg)
+    // console.log(msg)
     gameContainer.innerHTML = msg.data
 }

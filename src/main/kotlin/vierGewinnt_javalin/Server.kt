@@ -41,7 +41,6 @@ fun main(args: Array<String>) {
         }
         ws.onClose { ctx ->
             println("WebSocket Closed - ID: " + ctx.sessionId)
-            //delete User + Game from Userlist
             userList.remove(ctx)
         }
         ws.onMessage{ ctx ->
@@ -112,7 +111,7 @@ fun makeMoveAndSendHTMLString(ctx: WsContext ,game: VierGewinnt, input: Int){
                 }
             ctx.send(toHTMLString(game))
         } else {
-            println("unpossible move")
+            println("impossible move")
         }
     } else {
         println("GameOver")

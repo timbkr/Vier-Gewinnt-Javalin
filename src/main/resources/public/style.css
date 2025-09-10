@@ -15,23 +15,30 @@ body {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
-    color: white
+    color: white;
 }
 
 .head {
     padding: 2vh;
 }
 
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .zahlen {
     margin-bottom: 10px;
     background-color: teal;
-    border: none
+    border: none;
 }
 
 .game {
     border: 5px solid rgb(58, 114, 161);
     padding: 10px;
     background-color: rgb(255, 255, 255);
+    margin: 8px 0;
     margin-top: 5px;
 }
 
@@ -39,16 +46,18 @@ body {
     border-collapse: collapse;
 }
 
-.board table, .board th, .board td {
+.board table,
+.board th,
+.board td {
     border: 1px dotted black;
 }
 
-.board th, td {
+.board th,
+td {
     border: 1px solid white;
     width: 80px;
     height: 80px;
     text-align: center;
-
 }
 
 .board td {
@@ -57,7 +66,6 @@ body {
     font-size: 3em;
 }
 
-
 .playerX {
     width: 95%;
     height: 95%;
@@ -65,7 +73,6 @@ body {
     background-color: rgb(255, 234, 0);
     border: 1px solid black;
     border-radius: 100px;
-
 }
 
 .playerO {
@@ -79,7 +86,8 @@ body {
 
 .infoBox {
     display: flex;
-    width: auto;
+    justify-content: space-around;
+    width: 100%;
     height: 68px;
     justify-content: center;
     border-radius: 20px;
@@ -129,12 +137,10 @@ body {
 
 .toolbar .undoMove {
     background-color: crimson;
-
 }
 
 .toolbar .makeMove {
     background-color: darkcyan;
-
 }
 
 .infoBox button {
@@ -154,3 +160,128 @@ body {
     width: 60px;
 }
 
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .head h1 {
+        font-size: 1.5em;
+    }
+
+    .toolbar {
+        width: 100%;
+        max-width: 450px;
+        /*flex-direction: column;*/
+        /*align-items: center;*/
+        gap: 40px;
+        margin-top: 8px;
+    }
+
+    .toolbar button {
+        max-width: 200px;
+        margin: 5px 0;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .game {
+        padding: 5px;
+        margin: 20px 0;
+        overflow-x: auto;
+    }
+
+    .board th,
+    .board td {
+        width: 66px;
+        height: 66px;
+        font-size: 2em;
+    }
+
+    .infoBox {
+        /*width: 90%;*/
+        /*max-width: 300px;*/
+        height: auto;
+        padding: 15px;
+        margin: 10px auto;
+        /*align-items: center;*/
+    }
+
+    .infoBox h1 {
+        font-size: 1.2em;
+    }
+
+    .nextMoveX,
+    .nextMoveO {
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .head {
+        padding: 1.5vh;
+    }
+
+    .head h1 {
+        font-size: 1.3em;
+    }
+
+    .toolbar {
+        gap: 10px;
+    }
+
+    .toolbar button {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+    .game {
+        padding: 3px;
+        margin: 20px 0;
+    }
+
+    .board th,
+    .board td {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    .infoBox {
+        padding: 10px;
+    }
+
+    .infoBox h1 {
+        font-size: 1em;
+    }
+
+    .nextMoveX,
+    .nextMoveO {
+        width: 35px;
+        height: 35px;
+        margin-left: 8px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .board th,
+    .board td {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3em;
+    }
+
+    .toolbar button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .nextMoveX,
+    .nextMoveO {
+        width: 30px;
+        height: 30px;
+    }
+}
