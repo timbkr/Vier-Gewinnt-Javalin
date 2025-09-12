@@ -14,77 +14,81 @@
     </div>
 </header>
 
-<div class="toolbar">
-    <button class="newGame" onclick="sendRequestGET('newGame')">New Game</button>
-    <button class="undoMove" onclick="sendRequestGET('undoMove')">Undo Move</button>
-    <button class="makeMove" onclick="sendRequestGET('aiMove')">Make Move</button>
-</div>
-
-<div class="gameContainer">
-    <div class="game">
-        <table class="board">
-            <tr class="row5">
-                <td class="col0" onclick="sendMove(0)"></td>
-                <td class="col1" onclick="sendMove(1)"></td>
-                <td class="col2" onclick="sendMove(2)"></td>
-                <td class="col3" onclick="sendMove(3)"></td>
-                <td class="col4" onclick="sendMove(4)"></td>
-                <td class="col5" onclick="sendMove(5)"></td>
-                <td class="col6" onclick="sendMove(7)"></td>
-            </tr>
-            <tr class="row4">
-                <td class="col0" onclick="sendMove(0)"></td>
-                <td class="col1" onclick="sendMove(1)"></td>
-                <td class="col2" onclick="sendMove(2)"></td>
-                <td class="col3" onclick="sendMove(3)"></td>
-                <td class="col4" onclick="sendMove(4)"></td>
-                <td class="col5" onclick="sendMove(5)"></td>
-                <td class="col6" onclick="sendMove(7)"></td>
-            </tr>
-            <tr class="row3">
-                <td class="col0" onclick="sendMove(0)"></td>
-                <td class="col1" onclick="sendMove(1)"></td>
-                <td class="col2" onclick="sendMove(2)"></td>
-                <td class="col3" onclick="sendMove(3)"></td>
-                <td class="col4" onclick="sendMove(4)"></td>
-                <td class="col5" onclick="sendMove(5)"></td>
-                <td class="col6" onclick="sendMove(7)"></td>
-            </tr>
-            <tr class="row2">
-                <td class="col0" onclick="sendMove(0)"></td>
-                <td class="col1" onclick="sendMove(1)"></td>
-                <td class="col2" onclick="sendMove(2)"></td>
-                <td class="col3" onclick="sendMove(3)"></td>
-                <td class="col4" onclick="sendMove(4)"></td>
-                <td class="col5" onclick="sendMove(5)"></td>
-                <td class="col6" onclick="sendMove(7)"></td>
-            </tr>
-            <tr class="row1">
-                <td class="col0" onclick="sendMove(0)"></td>
-                <td class="col1" onclick="sendMove(1)"></td>
-                <td class="col2" onclick="sendMove(2)"></td>
-                <td class="col3" onclick="sendMove(3)"></td>
-                <td class="col4" onclick="sendMove(4)"></td>
-                <td class="col5" onclick="sendMove(5)"></td>
-                <td class="col6" onclick="sendMove(7)"></td>
-            </tr>
-            <tr class="row0">
-                <td class="col0" onclick="sendMove(0)"></td>
-                <td class="col1" onclick="sendMove(1)"></td>
-                <td class="col2" onclick="sendMove(2)"></td>
-                <td class="col3" onclick="sendMove(3)"></td>
-                <td class="col4" onclick="sendMove(4)"></td>
-                <td class="col5" onclick="sendMove(5)"></td>
-                <td class="col6" onclick="sendMove(7)"></td>
-            </tr>
-        </table>
-    </div>
-    <div class="infoBox">
-        <h1>Next:</h1>
-        <h1 class="nextMoveX">X</h1>
+<main>
+    <div class="toolbar">
+        <button class="newGame" onclick="sendRequestGET('newGame')">New Game</button>
+        <button class="undoMove" onclick="sendRequestGET('undoMove')">Undo Move</button>
+        <button class="makeMove" onclick="sendRequestGET('aiMove')">Make Move</button>
     </div>
 
-</div>
+    <div class="gameContainer">
+        <div class="game">
+            <table class="board">
+                <tr class="row5">
+                    <td class="col0" onclick="sendMove(0)"></td>
+                    <td class="col1" onclick="sendMove(1)"></td>
+                    <td class="col2" onclick="sendMove(2)"></td>
+                    <td class="col3" onclick="sendMove(3)"></td>
+                    <td class="col4" onclick="sendMove(4)"></td>
+                    <td class="col5" onclick="sendMove(5)"></td>
+                    <td class="col6" onclick="sendMove(7)"></td>
+                </tr>
+                <tr class="row4">
+                    <td class="col0" onclick="sendMove(0)"></td>
+                    <td class="col1" onclick="sendMove(1)"></td>
+                    <td class="col2" onclick="sendMove(2)"></td>
+                    <td class="col3" onclick="sendMove(3)"></td>
+                    <td class="col4" onclick="sendMove(4)"></td>
+                    <td class="col5" onclick="sendMove(5)"></td>
+                    <td class="col6" onclick="sendMove(7)"></td>
+                </tr>
+                <tr class="row3">
+                    <td class="col0" onclick="sendMove(0)"></td>
+                    <td class="col1" onclick="sendMove(1)"></td>
+                    <td class="col2" onclick="sendMove(2)"></td>
+                    <td class="col3" onclick="sendMove(3)"></td>
+                    <td class="col4" onclick="sendMove(4)"></td>
+                    <td class="col5" onclick="sendMove(5)"></td>
+                    <td class="col6" onclick="sendMove(7)"></td>
+                </tr>
+                <tr class="row2">
+                    <td class="col0" onclick="sendMove(0)"></td>
+                    <td class="col1" onclick="sendMove(1)"></td>
+                    <td class="col2" onclick="sendMove(2)"></td>
+                    <td class="col3" onclick="sendMove(3)"></td>
+                    <td class="col4" onclick="sendMove(4)"></td>
+                    <td class="col5" onclick="sendMove(5)"></td>
+                    <td class="col6" onclick="sendMove(7)"></td>
+                </tr>
+                <tr class="row1">
+                    <td class="col0" onclick="sendMove(0)"></td>
+                    <td class="col1" onclick="sendMove(1)"></td>
+                    <td class="col2" onclick="sendMove(2)"></td>
+                    <td class="col3" onclick="sendMove(3)"></td>
+                    <td class="col4" onclick="sendMove(4)"></td>
+                    <td class="col5" onclick="sendMove(5)"></td>
+                    <td class="col6" onclick="sendMove(7)"></td>
+                </tr>
+                <tr class="row0">
+                    <td class="col0" onclick="sendMove(0)"></td>
+                    <td class="col1" onclick="sendMove(1)"></td>
+                    <td class="col2" onclick="sendMove(2)"></td>
+                    <td class="col3" onclick="sendMove(3)"></td>
+                    <td class="col4" onclick="sendMove(4)"></td>
+                    <td class="col5" onclick="sendMove(5)"></td>
+                    <td class="col6" onclick="sendMove(7)"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="infoBox">
+            <h1>Next:</h1>
+            <h1 class="nextMoveX">X</h1>
+        </div>
+
+    </div>
+</main>
+
+<footer class="text-center">Made with ❤️ by Tim Becker</footer>
 
 <script src="script.js"></script>
 </body>

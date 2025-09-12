@@ -8,6 +8,9 @@
     font-family: Poppins;
 }
 
+html, body{
+    height: 100%;
+}
 body {
     background: #343a40;
     display: flex;
@@ -20,6 +23,10 @@ body {
 
 .head {
     padding: 2vh;
+}
+
+main{
+    flex-grow: 1;
 }
 
 .gameContainer {
@@ -158,6 +165,13 @@ td {
 
 .testBTN {
     width: 60px;
+}
+
+footer{
+    padding: 10px;
+    text-align: center;
+    /*color: white;*/
+    font-size: 14px;
 }
 
 /* Mobile Styles */

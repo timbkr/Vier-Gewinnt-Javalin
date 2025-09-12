@@ -36,8 +36,8 @@ A **Connect Four** game implemented in **Kotlin** with a **Javalin web server** 
 ### Local Development
 ```bash
 # Clone and run
-git clone https://github.com/timbkr/Vier-Gewinnt-Javalin
-cd Vier-Gewinnt-Javalin
+git clone https://github.com/timbkr/vier-gewinnt-javalin
+cd vier-gewinnt-javalin
 ./gradlew run
 
 # With Docker
