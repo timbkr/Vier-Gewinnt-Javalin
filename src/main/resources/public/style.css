@@ -167,6 +167,40 @@ td {
     width: 60px;
 }
 
+.github-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.github-button {
+    justify-self: center;
+    display: inline-block;
+    border: 2px solid #ef4444; /* Red */
+    background-color: #1f2937; /* Gray-900 */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin: 16px 0;
+}
+
+.github-button:hover {
+    background-color: #374151; /* Gray-800 */
+    border-color: #f97316; /* Orange-500 */
+}
+
+.github-button-content {
+    display: flex;
+    align-items: center;
+}
+
+.github-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
 footer{
     padding: 10px;
     text-align: center;
